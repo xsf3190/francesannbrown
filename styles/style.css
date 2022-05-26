@@ -1,0 +1,297 @@
+:root {
+    --column-width: 400px;
+    --gray-100: hsl(0, 0%, 10%);
+    --gray-200: hsl(0, 0%, 20%);
+    --gray-300: hsl(0, 0%, 46%);
+    --gray-400: hsl(0, 0%, 83%);
+    --gray-500: hsl(0, 0%, 96%);
+    --white: hsl(0, 0%, 100%);
+    --cornflower: hsl(218.54, 79.19%, 66.08%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    width: 90%;
+    min-height: 100vh;    
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ******************************* */
+/* Styles for introduction section */
+/* ******************************* */
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr 3fr 2fr;
+  border: 3vmax outset;
+  border-top-color: var(--gray-400);
+  border-left-color: var(--gray-400);
+  border-right-color: var(--gray-500);
+  border-bottom-color: var(--gray-500);
+}
+
+legend {
+  font-size: 3vmax;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin: 0 1vmax;
+  padding: 0 3vmax;
+}
+
+legend span {
+  font-size: 2vmax;
+  font-style: italic;
+  font-weight: 200;
+}
+
+fieldset figure {
+    margin: 0;
+}
+
+fieldset figcaption {
+    display: none;
+}
+
+fieldset img {
+  /*box-shadow: 4px 1px 15px rgb(100, 100, 100, 0.3);*/
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: perspective(1000px) rotateY(-25deg);
+}
+
+#img1 {grid-column: 2; grid-row: 2;} 
+#img2 {grid-column: 3; grid-row: 2;}
+#img3 {grid-column: 4; grid-row: 2;}
+#img4 {grid-column: 5; grid-row: 2;}
+#img5 {grid-column: 6; grid-row: 2;}
+
+#testimonial {
+    grid-column: 2 / span 5; 
+    grid-row: 3; 
+    align-self: end;
+    justify-self: center;
+    font-size: 1.3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: var(--gray-300);
+}
+
+#testimonial h4 {
+    color: var(--cornflower);
+}
+
+.fa-quote-left {
+    margin-right: 0.25vw;
+}
+
+.fa-quote-right {
+    margin-left: 0.25vw;
+}
+
+.fa-ul {
+    font-size: clamp(1rem, 2vw, 3rem);
+    line-height: 1.5;
+    color: var(--gray-300);
+    padding: 0.5rem;
+    margin: 5vw 0 0 5vw;
+}
+
+.fa-ul li:not(:last-child) {
+    margin-bottom: 2vmax;
+}
+
+/* ******************************* */
+/* Styles for all section headings */
+/* ******************************* */
+
+section > h1 {
+    font-size: clamp(1rem, 5vw, 3rem);
+    color: var(--gray-100);
+    margin: 3vw 0 3vw 0;
+    letter-spacing: 4px;
+    border-bottom: 2px solid var(--gray-400);
+    text-transform: uppercase;
+}
+
+/* ************************ */
+/* Start of GALLERY section */
+/* ************************ */
+
+#gallery > p {
+    margin-left: 1vw;
+}
+
+.grid {
+    columns: var(--column-width);
+    column-gap: 1vw;
+}
+
+.grid figure {
+    border: thin silver solid;
+    padding-top: 1vw;
+    break-inside: avoid;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Optima', sans-serif;
+    font-size: 1vw;
+    background-color: var(--gray-500);
+}
+
+.grid figure img {
+    width: 90%;
+    height: auto;
+    cursor: zoom-in;
+}
+
+.grid figure figcaption {
+    padding: 1.5vw;
+    text-align: left;
+    color: var(--gray-100);
+}
+
+.grid figure figcaption h4 {
+    color: var(--cornflower);
+    font-style: normal;
+}
+
+/* lightbox fills screen */
+#lightbox {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--gray-100);
+    overflow: hidden;
+}
+
+#lightbox::backdrop {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 1px,
+    rgba(0, 0, 0, 0.3) 1px,
+    rgba(0, 0, 0, 0.3) 20px
+  );
+  backdrop-filter: blur(3px);
+}
+
+.lightbox-header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lightbox-content {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+#lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+	object-fit: cover;
+    padding: 4px;
+    border: 2px solid white;
+}
+
+#lightbox button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 2.5vw;
+    margin: 0 1vw;
+}
+
+#lightbox-count {
+    background: transparent;
+    color: white;
+    font-size: 1.5vw;
+    margin: 0 1vw;
+}
+
+
+/* ************************ */
+/* Start of CONTACT section */
+/* ************************ */
+#contact form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-label-content {
+    margin-top: 5vh;
+    position:relative; 
+    width: 75%
+}
+
+.floating-label {
+    color:#1e4c82; 
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 11px;
+    padding: 0 5px;
+    background: #fff;
+    transition:0.2s ease all; 
+}
+
+.floating-input {
+    font-size: 2vw;
+    display: block;
+    width: 100%;
+    height: 5vw;
+    padding: 1vw;
+    background: #fff;
+    color: #323840;
+    border: 1px solid #3D85D8;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.floating-input:focus {
+    outline:none;
+}
+
+.floating-input:focus ~ .floating-label{
+    top:-8px;
+    font-size:13px;
+}
+
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+    top:-8px;
+    font-size:13px;
+}
+
+button#upload-button {
+    margin: 10vh 0 3vh;
+    width: 75%;
+    height: 10vw;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--cornflower);
+    color: white;
+    padding: 2vw 3vw;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 4vh;
+    cursor: pointer;    
+}
