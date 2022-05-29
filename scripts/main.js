@@ -58,7 +58,7 @@ function init() {
     const cloudName = "doswrvsvp"
     const uploadPreset = "qdi8tfk0"
     
-    const widget = cloudinary.createUploadWidget(
+    var widget = cloudinary.createUploadWidget(
     {
         cloudName: cloudName,
         uploadPreset: uploadPreset,
@@ -66,7 +66,7 @@ function init() {
         croppingShowDimensions: true,
         croppingShowBackButton: true,
         multiple: false,
-        /*sources: ["local", "url", "camera", "image_search", "google_drive", "facebook", "dropbox", "instagram", "shutterstock", 'unsplash'],*/
+        sources: ["local", "url", "camera", "image_search", "google_drive", "facebook", "dropbox", "instagram", "shutterstock", 'unsplash'],
         defaultSource: "local",
         googleApiKey: "AIzaSyCUob7BOkIEqwI6ZeBgaTUd8mb_-r5kW0Y",
         dropboxAppKey: "7i2pqj2wc3p47by"
@@ -89,11 +89,15 @@ function init() {
     })    
     
     upload_button.addEventListener("click", e => {
+        /*
         const isValidEmail = upload_email.checkValidity()
         if (isValidEmail) {
             widget.open()
             widget.update({tags: ["fab", upload_email.value]});
         }
+        */
+       console.log("about to open widget")
+        widget.open()
     })
     
     

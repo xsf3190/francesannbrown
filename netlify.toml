@@ -1,0 +1,8 @@
+[dev]
+    [dev.https]
+        certFile = "localhost.crt"
+        keyFile = "localhost.key"
+[build]
+  command = "npm run build"
+  functions = "functions"
+  publish = "_site"
