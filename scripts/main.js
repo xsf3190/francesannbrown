@@ -68,8 +68,8 @@ function init() {
         multiple: false,
         sources: ["local", "url", "camera", "image_search", "google_drive", "facebook", "dropbox", "instagram", "shutterstock", 'unsplash'],
         defaultSource: "local",
-        googleApiKey: "AIzaSyCUob7BOkIEqwI6ZeBgaTUd8mb_-r5kW0Y",
-        dropboxAppKey: "7i2pqj2wc3p47by"
+        googleApiKey: process.env.GOOGLE_API_KEY,
+        dropboxAppKey: process.env.DROPBOX_APP_KEY
     },
     (error, result) => { 
         if (!error && result && result.event === "success") {
